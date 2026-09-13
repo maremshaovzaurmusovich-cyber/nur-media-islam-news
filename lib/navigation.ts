@@ -3,8 +3,6 @@ export type SitePage = { title: string; slug: string; description: string; group
 export const sitePages: SitePage[] = [
   { title: 'Новости', slug: 'novosti', description: 'Новости и официальные сообщения ЦДУМТМ.', group: 'Главное' },
   { title: 'ЦДУМТМ', slug: 'cdumtm', description: 'Центральное духовное управление мусульман Таврического муфтията.', group: 'Главное' },
-  { title: 'Статьи', slug: 'stati', description: 'Статьи о вере, культуре, нравственности и истории Ислама.', group: 'Главное' },
-  { title: 'Медиа', slug: 'media', description: 'Фото, видео и аудиоматериалы ЦДУМТМ.', group: 'Главное' },
   { title: 'Контакты', slug: 'kontakty', description: 'Контактная информация Центрального духовного управления.', group: 'Главное' },
   { title: 'Деятельность ЦДУМТМ', slug: 'deyatelnost-cdumtm', description: 'Основные направления деятельности ЦДУМТМ.', group: 'О нас' },
   { title: 'Доклады и выступления', slug: 'doklady-i-vystupleniya', description: 'Доклады, обращения и публичные выступления.', group: 'О нас' },

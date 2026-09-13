@@ -27,8 +27,6 @@ const menuItems = [
   { label: 'Главная', href: '/', icon: 'home' as IconName },
   { label: 'Новости', href: '/novosti', icon: 'news' as IconName },
   { label: 'ЦДУМТМ', href: '/deyatelnost-cdumtm', icon: 'mosque' as IconName },
-  { label: 'Статьи', href: '/stati', icon: 'article' as IconName },
-  { label: 'Медиа', href: '/media', icon: 'media' as IconName },
   { label: 'Контакты', href: '/kontakty', icon: 'phone' as IconName },
 ];
 const sections = [
@@ -82,7 +80,17 @@ export function SiteShell({ children }: { children: ReactNode }) {
     <div className={`drawer-backdrop ${open ? 'visible' : ''}`} onClick={() => setOpen(false)} />
     <aside className={`drawer ${open ? 'open' : ''}`} aria-hidden={!open}>
       <div className="drawer-head"><Brand compact /><button className="icon-button close-button" aria-label="Закрыть меню" onClick={() => setOpen(false)}>×</button></div>
-      <nav>{menuItems.map(({ label, href, icon }) => <a href={href} className={pathname === href ? 'active' : ''} key={label}><span className="nav-icon"><UiIcon name={icon} /></span>{label}</a>)}</nav>
+      <nav>
+        {menuItems.slice(0, 3).map(({ label, href, icon }) => <a href={href} className={pathname === href ? 'active' : ''} key={label}><span className="nav-icon"><UiIcon name={icon} /></span>{label}</a>)}
+        {sections.filter(({ title }) => title === 'Статьи' || title === 'Медиа').map(({ title, icon, links }) => <details className="drawer-section" key={title}>
+          <summary><span className="nav-icon"><UiIcon name={icon} /></span><b>{title}</b><span className="chevron"><UiIcon name="chevron" /></span></summary>
+          <div className="drawer-submenu">{links.map((label) => {
+            const href = `/${byTitle[label].slug}`;
+            return <a href={href} className={pathname === href ? 'active' : ''} key={label}>{label}</a>;
+          })}</div>
+        </details>)}
+        {menuItems.slice(3).map(({ label, href, icon }) => <a href={href} className={pathname === href ? 'active' : ''} key={label}><span className="nav-icon"><UiIcon name={icon} /></span>{label}</a>)}
+      </nav>
     </aside>
   </div>;
 }
