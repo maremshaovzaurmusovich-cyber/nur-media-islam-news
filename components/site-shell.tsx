@@ -83,7 +83,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <nav>
         {menuItems.slice(0, 3).map(({ label, href, icon }) => <a href={href} className={pathname === href ? 'active' : ''} key={label}><span className="nav-icon"><UiIcon name={icon} /></span>{label}</a>)}
         {sections.filter(({ title }) => title === 'Статьи' || title === 'Медиа').map(({ title, icon, links }) => <details className="drawer-section" key={title}>
-          <summary><span className="nav-icon"><UiIcon name={icon} /></span><b>{title}</b><span className="chevron"><UiIcon name="chevron" /></span></summary>
+          <summary><span className="nav-icon"><UiIcon name={icon} /></span>{title}<span className="chevron"><UiIcon name="chevron" /></span></summary>
           <div className="drawer-submenu">{links.map((label) => {
             const href = `/${byTitle[label].slug}`;
             return <a href={href} className={pathname === href ? 'active' : ''} key={label}>{label}</a>;
