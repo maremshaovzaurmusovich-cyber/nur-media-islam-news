@@ -32,7 +32,7 @@ const menuItems = [
   { label: 'Контакты', href: '/kontakty', icon: 'phone' as IconName },
 ];
 const sections = [
-  { title: 'О нас', icon: 'users' as IconName, links: ['Деятельность ЦДУМТМ', 'Доклады и выступления'] },
+  { title: 'О нас', icon: 'users' as IconName, links: ['Деятельность ЦДУМТМ', 'Контакты'] },
   { title: 'Статьи', icon: 'article' as IconName, links: [
     'Столпы Ислама', 'Пятничные проповеди', 'Основы вероучения', 'Вопросы и ответы', 'Актуальные темы',
     'Библиотека', 'Столпы веры', 'Секты', 'Опровержения', 'Культура и нравственность', 'Женщина в Исламе',
@@ -75,7 +75,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div className="footer-links">{links.map((label) => <a href={`/${byTitle[label].slug}`} key={label}>{label}</a>)}</div>
         </details>)}
         <a className="footer-row" href="/novosti"><span className="nav-icon"><UiIcon name="news" /></span><b>Новости</b></a>
-        <a className="footer-row" href="/kontakty"><span className="nav-icon"><UiIcon name="phone" /></span><b>Контакты</b></a>
       </div>
       <div className="footer-bottom"><Brand /><p>«Знание. Нравственность.<br />Единство.»</p><small>© 2024 ЦДУМТМ. Все права защищены.</small></div>
     </footer>
