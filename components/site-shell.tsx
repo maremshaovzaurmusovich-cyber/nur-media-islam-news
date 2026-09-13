@@ -26,7 +26,7 @@ function UiIcon({ name }: { name: IconName }) {
 const menuItems = [
   { label: 'Главная', href: '/', icon: 'home' as IconName },
   { label: 'Новости', href: '/novosti', icon: 'news' as IconName },
-  { label: 'ЦДУМТМ', href: '/cdumtm', icon: 'mosque' as IconName },
+  { label: 'ЦДУМТМ', href: '/deyatelnost-cdumtm', icon: 'mosque' as IconName },
   { label: 'Статьи', href: '/stati', icon: 'article' as IconName },
   { label: 'Медиа', href: '/media', icon: 'media' as IconName },
   { label: 'Контакты', href: '/kontakty', icon: 'phone' as IconName },
